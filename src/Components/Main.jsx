@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
+import {Link} from 'react-router-dom'
 import image1 from "../Accets/Shopping.jpg";
 import image3 from "../Accets/Women.jpg";
 import image2 from "../Accets/Mens.jpg";
@@ -74,14 +75,15 @@ const Main = ({ Handelorderpopup }) => {
                   {item.description}
                 </motion.p>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={Handelorderpopup}
-                  className="bg-blue-700 hover:bg-blue-800 text-white px-6 md:px-8 py-2 md:py-3 rounded-md w-40 md:w-48 text-lg"
-                >
-                  Shop Now
-                </motion.button>
+                <Link to="/shop">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="bg-blue-700 hover:bg-blue-800 text-white px-6 md:px-8 py-2 md:py-3 rounded-md w-40 md:w-48 text-lg"
+  >
+    Shop Now
+  </motion.button>
+</Link>
               </div>
 
               {/* Right Side - Image */}

@@ -1,6 +1,7 @@
 import React from "react";
 import Image1 from "../Accets/one.jpg";
 import Image2 from "../Accets/two.jpg";
+import { Link } from "react-router-dom";
 import Image3 from "../Accets/three.jpg";
 import { StarIcon } from "@heroicons/react/24/solid";
 
@@ -50,7 +51,7 @@ const Item = ({ handleOrderPopup }) => {
                   <img
                     src={data.img}
                     alt={data.title}
-                    className="w-[220px] block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md"
+                    className="w-[280px] block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md"
                   />
                 </div>
                 <div className="flex items-center justify-center gap-1 flex-col">
@@ -63,12 +64,13 @@ const Item = ({ handleOrderPopup }) => {
                   <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
                     {data.desc}
                   </p>
-                  <button
-                    className="bg-primary hover:scale-105 duration-300 text-white px-4 rounded-full mt-4 group-hover:bg-white py-1 group-hover:text-primary"
-                    onClick={handleOrderPopup}
-                  >
-                    Order Now
-                  </button>
+                 <Link to="/shop">
+  <button
+    className="bg-primary hover:scale-105 duration-300 text-blue-500 border px-4 rounded-full mt-4 group-hover:bg-white py-1 group-hover:text-primary hover:bg-white"
+  >
+    Order Now
+  </button>
+</Link>
                 </div>
               </div>
             ))}
@@ -83,12 +85,14 @@ const Item = ({ handleOrderPopup }) => {
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             Explore our best offers and find the perfect product for you.
           </p>
+          <Link to="/shop">
           <button
             onClick={handleOrderPopup}
             className="mt-8 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full text-lg duration-300"
           >
             Start Now
           </button>
+          </Link>
         </div>
       </div>
     </div>
